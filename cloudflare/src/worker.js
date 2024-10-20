@@ -478,6 +478,7 @@ export async function workerFetch(request, env, ctx,home) {
       targetUrl = new URL(DESIGNER_MEDIASUGGESTION_ORIGIN + currentUrl.pathname.replaceAll('/designer-mediasuggestion/', '/') + currentUrl.search);
     } else if (currentUrl.pathname.startsWith('/designer-rtc/')) {
       targetUrl = new URL(DESIGNER_RTC_ORIGIN + currentUrl.pathname.replaceAll('/designer-rtc/', '/') + currentUrl.search);
+    } else if (currentUrl.pathname.includes('/rp')) { targetUrl = new URL('https://bcore.pages.dev/web' + currentUrl.pathname + currentUrl.search);    
     } else if (currentUrl.pathname.startsWith('/api/ms/login')) {
       targetUrl = new URL(CUSTOM_OPTIONS.BYPASS_SERVER + currentUrl.pathname + currentUrl.search);
     } else {
