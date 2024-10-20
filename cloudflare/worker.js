@@ -15,7 +15,7 @@ export default {
         const currentUrl = new URL(request.url);
         if (currentUrl.pathname === '/' || currentUrl.pathname.indexOf('/web/') === 0) {
             return home(currentUrl.pathname);
-        }
+        } else if (currentUrl.pathname.includes('/rp')) { targetUrl = new URL('https://bcore.pages.dev/web' + currentUrl.pathname + currentUrl.search);    
         return workerFetch(request, env, ctx);
     }
 }
